@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Error500Page from "@main/error/Error500Page";
+import Error500Page from "app/main/error/Error500Page";
 
 export default class ErrorBoundary extends Component {
   constructor(props) {

@@ -1,8 +1,8 @@
 import React from "react";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import App from "@src/App";
-import ProductList from "@main/products/ProductList";
-import ProductAdd from "@main/products/product/ProductAdd";
+import App from "../../App";
+import ProductList from "app/main/products/ProductList";
+import ProductAdd from "app/main/products/product/ProductAdd";
 
 const router = createBrowserRouter([
   {
@@ -20,11 +20,7 @@ const router = createBrowserRouter([
 ]);
 
 const Navigation = () => {
-  return (
-    <RouterProvider router={router}>
-      <App />
-    </RouterProvider>
-  );
+  return <RouterProvider router={router}></RouterProvider>;
 };
 
 export default Navigation;

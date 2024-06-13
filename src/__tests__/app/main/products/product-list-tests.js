@@ -1,7 +1,8 @@
 import React from "react";
 import { render, waitFor } from "@testing-library/react";
-import ProductList from "@main/products/ProductList";
+import ProductList from "app/main/products/ProductList";
 import { faker } from "@faker-js/faker";
+import { MemoryRouter } from "react-router-dom";
 
 const products = Array(10)
   .fill(0)
@@ -21,14 +22,22 @@ describe("ProductList", () => {
   });
 
   it("renders product table when API call succeeds", async () => {
-    const { getByRole, debug } = render(<ProductList />);
+    const { getByRole, debug } = render(
+      <MemoryRouter>
+        <ProductList />
+      </MemoryRouter>
+    );
     debug();
     await waitFor(() => getByRole("table"));
     expect(getByRole("table")).toBeInTheDocument();
   });
 
   it("renders correct table headers", async () => {
-    const { getAllByRole, debug } = render(<ProductList />);
+    const { getAllByRole, debug } = render(
+      <MemoryRouter>
+        <ProductList />
+      </MemoryRouter>
+    );
     debug();
     const headers = await waitFor(() => getAllByRole("table-header"));
     expect(headers).toHaveLength(5);
@@ -42,7 +51,11 @@ describe("ProductList", () => {
   });
 
   it("renders correct product rows", async () => {
-    const { getAllByRole, debug } = render(<ProductList />);
+    const { getAllByRole, debug } = render(
+      <MemoryRouter>
+        <ProductList />
+      </MemoryRouter>
+    );
     debug();
     const rows = await waitFor(() => getAllByRole("table-row"));
     expect(rows).toHaveLength(10);

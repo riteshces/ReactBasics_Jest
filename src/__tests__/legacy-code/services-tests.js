@@ -1,4 +1,4 @@
-import { Get } from "@legacy-code/http-service/services";
+import { Get } from "legacy-code/http-service/services";
 
 describe("Get function", () => {
   beforeEach(() => {

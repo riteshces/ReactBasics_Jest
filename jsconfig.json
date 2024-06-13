@@ -2,10 +2,10 @@
   "compilerOptions": {
     "baseUrl": "./src",
     "paths": {
-      "@app/*": ["app/*"],
-      "@legacy-code/*": ["legacy-code/*"],
-      "@main/*": ["app/main/*"],
-      "@src/*": ["./src"]
+      "app/*": ["app/*"],
+      "legacy-code/*": ["legacy-code/*"],
+      "app/main/*": ["app/main/*"],
+      "app/components/*": ["app/components/*"]
     }
   }
 }
